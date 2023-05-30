@@ -1,0 +1,45 @@
+{
+  "name"             : "tenantedlaravel/domains",
+  "description"      : "Tenanted Laravel extension providing advanced database support",
+  "type"             : "library",
+  "require"          : {
+    "php"                 : "^8.1",
+    "laravel/framework"   : "^10.0",
+    "tenantedlaravel/core": "@dev"
+  },
+  "require-dev"      : {
+    "marcocesarato/php-conventional-changelog": "^1.17"
+  },
+  "license"          : "MIT",
+  "autoload"         : {
+    "psr-4": {
+      "Tenanted\\Database\\": "src/"
+    }
+  },
+  "autoload-dev"     : {
+    "psr-4": {
+      "Tenanted\\Tests\\Database\\": "tests"
+    }
+  },
+  "authors"          : [
+    {
+      "name" : "Ollie",
+      "email": "code@ollie.codes"
+    }
+  ],
+  "minimum-stability": "stable",
+  "scripts"          : {
+    "changelog"    : "conventional-changelog",
+    "release"      : "conventional-changelog --commit",
+    "release:patch": "conventional-changelog --patch --commit",
+    "release:minor": "conventional-changelog --minor --commit",
+    "release:major": "conventional-changelog --major --commit"
+  },
+  "extra"            : {
+    "laravel": {
+      "providers": [
+        "Tenanted\\Database\\TenantedDatabaseServiceProvider"
+      ]
+    }
+  }
+}
